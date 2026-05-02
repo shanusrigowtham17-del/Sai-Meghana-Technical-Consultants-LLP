@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expertise — Sai Meghana Technical Consultants LLP</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#060e1c;--navy2:#0d1f38;--navy3:#142240;--gold:#c9a84c;--gold2:#e8c97a;--gold3:#f5dfa0;--white:#fff;--muted:#7a8fa8;--border:rgba(201,168,76,.18);--border2:rgba(201,168,76,.35)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden}
+#bg3d{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 4rem;display:flex;align-items:center;justify-content:space-between;background:rgba(6,14,28,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-brand{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold2);letter-spacing:.03em;text-decoration:none}
+.nav-brand span{display:block;font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:400;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-top:1px}
+.nav-links{display:flex;gap:2.2rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.83rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;transition:color .3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold2)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{background:var(--gold);color:var(--navy);padding:.5rem 1.3rem;border-radius:2px;text-decoration:none;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .3s,transform .2s}
+.nav-cta:hover{background:var(--gold2);transform:translateY(-1px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.sec-label{font-size:.73rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.7rem}
+
+.page-hero{position:relative;z-index:10;padding:10rem 4rem 5rem;border-bottom:1px solid var(--border)}
+.page-hero .sec-label{animation:fadeUp .7s .3s both}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:700;line-height:1.1;animation:fadeUp .7s .5s both}
+.page-hero h1 em{font-style:italic;color:var(--gold)}
+.page-hero-sub{font-size:1rem;color:var(--muted);line-height:1.8;max-width:560px;margin-top:1.2rem;animation:fadeUp .7s .7s both}
+
+/* EXPERTISE LIST */
+.exp-section{position:relative;z-index:10;padding:6rem 4rem}
+.exp-section:nth-child(even){background:var(--navy2)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+.exp-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;line-height:1.2}
+.exp-list{display:flex;flex-direction:column;gap:1.5px;background:var(--border)}
+.exp-item{display:grid;grid-template-columns:3rem 1fr auto auto;align-items:center;gap:2rem;padding:1.8rem 2rem;position:relative;overflow:hidden;transition:background .3s;cursor:default}
+.exp-section:nth-child(even) .exp-item{background:var(--navy2)}
+.exp-section:nth-child(odd) .exp-item{background:var(--navy)}
+.exp-item:hover{background:rgba(201,168,76,.05) !important}
+.exp-item::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transition:transform .4s;transform-origin:bottom}
+.exp-item:hover::before{transform:scaleY(1)}
+.exp-n{font-family:'Playfair Display',serif;font-size:.9rem;color:var(--gold);font-weight:700;opacity:.5;transition:opacity .3s}
+.exp-item:hover .exp-n{opacity:1}
+.exp-title{font-size:1rem;font-weight:500;line-height:1.4}
+.exp-desc{font-size:.83rem;color:var(--muted);margin-top:.3rem;line-height:1.5}
+.exp-badge{padding:.3rem .9rem;border:1px solid var(--border);border-radius:2px;font-size:.72rem;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;transition:border-color .3s}
+.exp-item:hover .exp-badge{border-color:var(--gold)}
+.exp-arrow{color:var(--muted);font-size:1.1rem;transition:transform .3s,color .3s}
+.exp-item:hover .exp-arrow{transform:translateX(6px);color:var(--gold)}
+
+/* CAPABILITY MATRIX */
+.matrix-section{position:relative;z-index:10;padding:6rem 4rem;background:var(--navy2)}
+.matrix-head{margin-bottom:3rem;text-align:center}
+.matrix-head h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-top:.7rem}
+.matrix-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem}
+.matrix-cell{text-align:center;padding:2rem 1.5rem;border:1px solid var(--border);border-radius:2px;transition:border-color .3s,background .3s}
+.matrix-cell:hover{border-color:var(--gold);background:rgba(201,168,76,.04)}
+.matrix-pct{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--gold);display:block;margin-bottom:.5rem}
+.matrix-skill{font-size:.85rem;color:var(--muted);line-height:1.5}
+.matrix-bar{height:3px;background:var(--border);border-radius:2px;margin-top:1rem;overflow:hidden}
+.matrix-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;width:0;transition:width 1.5s ease}
+
+/* PROCESS */
+.process-section{position:relative;z-index:10;padding:6rem 4rem}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:3rem;position:relative}
+.process-steps::before{content:'';position:absolute;top:2.5rem;left:0;right:0;height:1px;background:var(--border);z-index:0}
+.proc-step{padding:0 1.5rem 2rem;position:relative;z-index:1;text-align:center}
+.proc-dot{width:50px;height:50px;border:1px solid var(--border2);border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold);transition:background .3s,border-color .3s}
+.proc-step:hover .proc-dot{background:rgba(201,168,76,.08);border-color:var(--gold)}
+.proc-title{font-size:.95rem;font-weight:500;margin-bottom:.5rem;color:var(--white)}
+.proc-desc{font-size:.82rem;color:var(--muted);line-height:1.6}
+
+footer{position:relative;z-index:10;background:rgba(0,0,0,.5);border-top:1px solid var(--border);padding:2.5rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.ft-brand{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold2)}
+.ft-meta{font-size:.78rem;color:var(--muted);margin-top:3px}
+.ft-links{display:flex;gap:2rem}
+.ft-links a{font-size:.78rem;color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:.08em;transition:color .3s}
+.ft-links a:hover{color:var(--gold)}
+.ft-copy{font-size:.75rem;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){nav{padding:1rem 1.5rem}.nav-links{display:none}.page-hero,.exp-section,.matrix-section,.process-section,footer{padding:3rem 1.5rem}.exp-item{grid-template-columns:2.5rem 1fr;grid-template-rows:auto auto}.exp-badge,.exp-arrow{display:none}}
+</style>
+</head>
+<body>
+<canvas id="bg3d"></canvas>
+<nav>
+  <a href="index.html" class="nav-brand">Sai Meghana Technical Consultants LLP<span>Hyderabad · Telangana · India</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="projects.html" class="active">Expertise</a><a href="contact.html">Contact</a>
+  </div>
+  <a href="tel:+919963399663" class="nav-cta">📞 Call Now</a>
+</nav>
+
+<div class="page-hero">
+  <div class="sec-label">Our Expertise</div>
+  <h1>Deep <em>Technical</em><br>Capabilities</h1>
+  <p class="page-hero-sub">Eight specialized domains of technical excellence, built over 11 years of industrial and infrastructure project delivery across Telangana.</p>
+</div>
+
+<section class="exp-section reveal">
+  <div class="exp-header">
+    <div><div class="sec-label">Service Verticals</div><h2>Complete Capability Spectrum</h2></div>
+  </div>
+  <div class="exp-list">
+    <div class="exp-item"><span class="exp-n">01</span><div><div class="exp-title">Architectural Layout Designing Services</div><div class="exp-desc">Industrial & commercial facility planning with full regulatory compliance and CAD documentation</div></div><span class="exp-badge">Architecture</span><span class="exp-arrow">→</span></div>
+    <div class="exp-item"><span class="exp-n">02</span><div><div class="exp-title">Reinforced Cement Concrete Work</div><div class="exp-desc">Structural RCC for foundations, slabs, beams, columns and full frame construction per IS codes</div></div><span class="exp-badge">Structural</span><span class="exp-arrow">→</span></div>
+    <div class="exp-item"><span class="exp-n">03</span><div><div class="exp-title">Specialized Works — Heavy Machine Foundations</div><div class="exp-desc">Dynamic load analysis, vibration isolation & anchor bolt design for turbines, compressors, presses</div></div><span class="exp-badge">Specialized</span><span class="exp-arrow">→</span></div>
+    <div class="exp-item"><span class="exp-n">04</span><div><div class="exp-title">Roads, Drainage, Water Supply & Utility Infrastructure</div><div class="exp-desc">Complete internal industrial utility networks — roads, storm drainage, water supply, utility corridors</div></div><span class="exp-badge">Infrastructure</span><span class="exp-arrow">→</span></div>
+    <div class="exp-item"><span class="exp-n">05</span><div><div class="exp-title">Silos, Chimneys & Industrial Sheds</div><div class="exp-desc">Bulk storage silos, emission control chimneys, and large-span pre-engineered manufacturing sheds</div></div><span class="exp-badge">Industrial</span><span class="exp-arrow">→</span></div>
+    <div class="exp-item"><span class="exp-n">06</span><div><div class="exp-title">Vendor Selection, Tendering & Contract Management</div><div class="exp-desc">Full tendering lifecycle — RFQ, techno-commercial evaluation, contract drafting & performance monitoring</div></div><span class="exp-badge">Consultancy</span><span class="exp-arrow">→</span></div>
+    <div class="exp-item"><span class="exp-n">07</span><div><div class="exp-title">Architectural Engineering Services</div><div class="exp-desc">Integrated architectural & structural engineering bridging design intent with structural reality</div></div><span class="exp-badge">Engineering</span><span class="exp-arrow">→</span></div>
+    <div class="exp-item"><span class="exp-n">08</span><div><div class="exp-title">Civil & Infrastructure — Supervisory (End to End)</div><div class="exp-desc">Full project supervision from kick-off to handover — quality assurance, progress tracking & punch list</div></div><span class="exp-badge">Supervision</span><span class="exp-arrow">→</span></div>
+  </div>
+</section>
+
+<section class="matrix-section">
+  <div class="matrix-head reveal">
+    <div class="sec-label">Capability Depth</div>
+    <h2>Domain Proficiency</h2>
+  </div>
+  <div class="matrix-grid reveal" id="matrixGrid">
+    <div class="matrix-cell"><span class="matrix-pct">95%</span><div class="matrix-skill">Architectural Design</div><div class="matrix-bar"><div class="matrix-fill" data-w="95"></div></div></div>
+    <div class="matrix-cell"><span class="matrix-pct">92%</span><div class="matrix-skill">Structural Engineering</div><div class="matrix-bar"><div class="matrix-fill" data-w="92"></div></div></div>
+    <div class="matrix-cell"><span class="matrix-pct">90%</span><div class="matrix-skill">Machine Foundations</div><div class="matrix-bar"><div class="matrix-fill" data-w="90"></div></div></div>
+    <div class="matrix-cell"><span class="matrix-pct">88%</span><div class="matrix-skill">Industrial Infrastructure</div><div class="matrix-bar"><div class="matrix-fill" data-w="88"></div></div></div>
+    <div class="matrix-cell"><span class="matrix-pct">85%</span><div class="matrix-skill">Project Management</div><div class="matrix-bar"><div class="matrix-fill" data-w="85"></div></div></div>
+    <div class="matrix-cell"><span class="matrix-pct">93%</span><div class="matrix-skill">Contract Management</div><div class="matrix-bar"><div class="matrix-fill" data-w="93"></div></div></div>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="reveal">
+    <div class="sec-label">How We Work</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-top:.5rem">Our Project Process</h2>
+  </div>
+  <div class="process-steps reveal">
+    <div class="proc-step"><div class="proc-dot">01</div><div class="proc-title">Discovery</div><div class="proc-desc">Understanding project scope, site conditions, and client requirements in detail</div></div>
+    <div class="proc-step"><div class="proc-dot">02</div><div class="proc-title">Design</div><div class="proc-desc">Architectural layout and structural design developed to specification</div></div>
+    <div class="proc-step"><div class="proc-dot">03</div><div class="proc-title">Planning</div><div class="proc-desc">Detailed BOQ, vendor selection, tendering, and schedule creation</div></div>
+    <div class="proc-step"><div class="proc-dot">04</div><div class="proc-title">Execution</div><div class="proc-desc">On-site construction with active supervision and quality control</div></div>
+    <div class="proc-step"><div class="proc-dot">05</div><div class="proc-title">Delivery</div><div class="proc-desc">Final inspection, punch list clearance, and complete handover documentation</div></div>
+  </div>
+</section>
+
+<footer>
+  <div><div class="ft-brand">Sai Meghana Technical Consultants LLP</div><div class="ft-meta">Hyderabad, Telangana · GST: 36**********1ZZ</div></div>
+  <div class="ft-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="projects.html">Expertise</a><a href="contact.html">Contact</a></div>
+  <div class="ft-copy">© 2024 Sai Meghana Technical Consultants LLP</div>
+</footer>
+
+<script>
+const canvas=document.getElementById('bg3d'),ctx=canvas.getContext('2d');
+let W,H;const N=70,pts=[];
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+for(let i=0;i<N;i++)pts.push({x:Math.random()*1600-300,y:Math.random()*1200,z:Math.random()*600+100,vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.08,vz:(Math.random()-.5)*.15,size:Math.random()*1.2+.4});
+let mx=W/2,my=H/2;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+function project(x,y,z){const f=500,s=f/(f+z);return{px:W/2+(x-W/2)*s,py:H/2+(y-H/2)*s,s}}
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  pts.forEach(p=>{p.x+=p.vx+(mx-W/2)*.00012;p.y+=p.vy+(my-H/2)*.00008;p.z+=p.vz;
+    if(p.z>700)p.z=50;if(p.z<50)p.z=700;
+    if(p.x>W+300)p.x=-300;if(p.x<-300)p.x=W+300;
+    if(p.y>H+200)p.y=-200;if(p.y<-200)p.y=H+200});
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+    const a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,dz=a.z-b.z;
+    const d=Math.sqrt(dx*dx+dy*dy+dz*dz);
+    if(d<200){const pa=project(a.x,a.y,a.z),pb=project(b.x,b.y,b.z);
+      ctx.beginPath();ctx.moveTo(pa.px,pa.py);ctx.lineTo(pb.px,pb.py);
+      ctx.strokeStyle=`rgba(201,168,76,${(1-d/200)*.15})`;ctx.lineWidth=.5;ctx.stroke()}}
+  pts.forEach(p=>{const{px,py,s}=project(p.x,p.y,p.z);
+    ctx.beginPath();ctx.arc(px,py,p.size*s,0,Math.PI*2);
+    ctx.fillStyle=`rgba(201,168,76,${(.15+s*.4)*Math.min(1,(p.z-50)/200)})`;ctx.fill()});
+  requestAnimationFrame(draw)}
+draw();
+const obs=new IntersectionObserver(es=>es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*100)}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.exp-item').forEach((c,i)=>{
+  c.style.cssText+=`opacity:0;transform:translateX(-20px);transition:opacity .5s ${i*.06}s,transform .5s ${i*.06}s,background .3s`;
+  const o=new IntersectionObserver(([e])=>{if(e.isIntersecting){c.style.opacity='1';c.style.transform='none';o.unobserve(c)}},{threshold:.05});o.observe(c)});
+const matObs=new IntersectionObserver(([e])=>{if(e.isIntersecting){document.querySelectorAll('.matrix-fill').forEach(f=>f.style.width=f.dataset.w+'%');matObs.disconnect()}},{threshold:.3});
+matObs.observe(document.getElementById('matrixGrid'));
+</script>
+</body>
+</html>
